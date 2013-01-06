@@ -195,7 +195,7 @@ function! BufstopSearch(args)
  
   if exists("g:xolox#shell#version")
     " use vim-shell when available
-    let s:output = join(xolox#shell#execute(cmd, 1), '\n')
+    let s:output = join(xolox#shell#execute(cmd, 1), "\n")
   else
     let s:output = system(cmd)
   end

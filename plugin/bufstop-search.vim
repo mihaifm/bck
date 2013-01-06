@@ -11,10 +11,6 @@ if !exists('g:BufstopSearchRoots')
   let g:BufstopSearchRoots = ['.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', 'Gemfile']
 endif
 
-if !exists('g:BufstopSearchSysFunc')
-  let g:BufstopSearchSysFunc = 'system'
-endif
-
 " detect system ack
 let s:ack = executable('ack-grep') ? 'ack-grep' : 'ack'
 let s:ack .= ' -H --nocolor --nogroup --column '
@@ -197,7 +193,8 @@ function! BufstopSearch(args)
   let cmd = "ack -H --nocolor --nogroup --column " . shellescape(a:args)
   echo "running: " . cmd
  
-  if g:BufstopSearchSysFunc ==# 'vim-shell'
+  if exists("g:xolox#shell#version")
+    " use vim-shell when available
     let s:output = join(xolox#shell#execute(cmd, 1), '\n')
   else
     let s:output = system(cmd)

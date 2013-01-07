@@ -43,8 +43,8 @@ directory after closing the [Bufstop](https://github.com/mihaifm/bufstop) window
 
 The following key mappings are present in the [Bufstop](https://github.com/mihaifm/bufstop) window:
 
-    <CR>     Open the selected result. |cursorline| is used for highlighting
-    <Esc>    Dismiss the |Bufstop| window
+    <CR>     Open the selected result. cursorline is used for highlighting
+    <Esc>    Dismiss the Bufstop window
     k,j      Move up/down
 
 
@@ -75,6 +75,8 @@ Defines project root markers used for the `:ChangeToRoot` command.
 Defaults: 
 
     ['.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', 'Gemfile']
+
+Note: a slash / at the end identifies a directory, no slash means a file.
 
 ##Recommended mappings
 

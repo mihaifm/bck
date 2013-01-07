@@ -53,8 +53,8 @@ directory after closing the |Bufstop| window).
 
 The following key mappings are present in the |Bufstop| window:
 
-<CR>     Open the selected result. |cursorline| is used for highlighting
-<Esc>    Dismiss the |Bufstop| window
+<CR>     Open the selected result. cursorline is used for highlighting
+<Esc>    Dismiss the Bufstop window
 k,j      Move up/down
 
 :ChangeToRoot                                                  *:ChangeToRoot*
@@ -85,6 +85,8 @@ Defines project root markers used for the |:ChangeToRoot| command.
 Defaults: 
 >
    ['.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', 'Gemfile']
+
+Note: a slash / at the end identifies a directory, no slash means a file.
 
 ===============================================================================
 4. RECOMMENDED MAPPINGS

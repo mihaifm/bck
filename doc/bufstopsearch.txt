@@ -53,8 +53,8 @@ directory after closing the |Bufstop| window).
 
 The following key mappings are present in the |Bufstop| window:
 
-<CR>     Open the selected result. cursorline is used for highlighting
-<Esc>    Dismiss the Bufstop window
+<CR>     Open the selected result. |cursorline| is used for highlighting
+<Esc>    Dismiss the |Bufstop| window
 k,j      Move up/down
 
 :ChangeToRoot                                                  *:ChangeToRoot*

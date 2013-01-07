@@ -186,11 +186,18 @@ function! s:BufstopSearchPrev()
 endfunction
 
 function! BufstopSearch(args)
+  let args = ''
   if a:args == ''
-    return
+    let args = expand('<cword>')
+    if args == ''
+      return
+    endif
+    call s:ChangeToRootDirectory()
+  else
+    let args = a:args
   endif
 
-  let cmd = "ack -H --nocolor --nogroup --column " . shellescape(a:args)
+  let cmd = "ack -H --nocolor --nogroup --column " . shellescape(args)
   echo "running: " . cmd
  
   if exists("g:xolox#shell#version")
@@ -302,8 +309,7 @@ endfunction
 
 command! ChangeToRoot call <SID>ChangeToRootDirectory()
 command! -nargs=* -complete=file Bck call BufstopSearch(<q-args>)
-command! -nargs=* -complete=file Bckw call BufstopSearch(expand('<cword>'))
-command! -nargs=* -complete=file Bckp call BufstopSearchProject(expand('<cword>'))
 command! BufstopSearchOpen call <SID>BufstopSearchOpen()
 command! BufstopSearchNext call <SID>BufstopSearchNext()
 command! BufstopSearchPrev call <SID>BufstopSearchPrev()
+

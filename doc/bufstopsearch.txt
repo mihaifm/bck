@@ -86,6 +86,8 @@ Defaults:
 >
    ['.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', 'Gemfile']
 
+Note: a slash / at the end identifies a directory, no slash means a file.
+
 ===============================================================================
 4. RECOMMENDED MAPPINGS
 

@@ -238,7 +238,8 @@ function! BufstopSearch(args)
   
   setlocal modifiable
   exe 'setlocal statusline=Bufstop-search:\ ' . len(s:lines) . '\ results' 
-  exe "normal ggdG"
+  exe 'goto'
+  exe '%delete'
   call setline(1, s:lines)
   setlocal nomodifiable
 

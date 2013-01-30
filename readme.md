@@ -26,6 +26,8 @@ Other search options are:
 * recursive / non-recursive
 * whole word / substring
 
+![screenshot](https://raw.github.com/mihaifm/bck/master/img/bck.png)
+
 ### Installation
 
 This plugin uses **ack** for the search, which is a Perl script better that

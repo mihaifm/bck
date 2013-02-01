@@ -507,9 +507,12 @@ function! s:FindInCurrentPath(pattern)
     let pattern_dir = findfile(a:pattern, dir_current_file . ";")
   endif
 
-  " If we're at the project root or we can't find one above us
-  if pattern_dir == a:pattern || empty(pattern_dir)
+  if empty(pattern_dir)
     return ""
+  endif
+
+  if pattern_dir == a:pattern
+    return "."
   else
     return substitute(pattern_dir, a:pattern . "$", "", "")
   endif

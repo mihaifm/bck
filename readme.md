@@ -153,6 +153,11 @@ results can be found in the quickfix window, using `:copen`. You can still set
 the search options with the `:BckOpen` command.    
 Default: 0
 
+    g:BckPrg
+
+Allows another grep-like utility to be used instead of ack.
+Default: `ack -H --nocolor --nogroup --column`
+
 ### Recommended mappings 
 
 You can put these in your `vimrc` to make things easier:

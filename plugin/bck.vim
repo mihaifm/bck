@@ -48,6 +48,10 @@ call s:InitVariable('g:BckHidden', 0)
 let s:ack = executable('ack-grep') ? 'ack-grep' : 'ack'
 let s:ack .= ' -H --nocolor --nogroup --column '
 
+if exists('g:BckPrg')
+  let s:ack = g:BckPrg . ' '
+endif
+
 let s:name = "--Bck-search--"
 let s:output = []
 let s:types = ["path", "line_no", "col_no", "text"]
@@ -379,7 +383,7 @@ function! Bck(cmd, args)
 
   let s:bcko = g:BckOptions
 
-  let cmd = "ack -H --nocolor --nogroup --column"
+  let cmd = s:ack
 
   if s:bcko[0] ==# 'f'
     let cmd .= " -G " . expand("%:t")
@@ -421,6 +425,7 @@ function! Bck(cmd, args)
     end
 
     call filter(s:output, "v:val !~# '^ack.pl:'")
+    call filter(s:output, "v:val !~# '^ERR:'")
 
     " put the results in the quickfix window as well
     exe "cgete s:output" 

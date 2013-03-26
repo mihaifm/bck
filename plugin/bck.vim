@@ -134,7 +134,7 @@ function! s:BckSelectBuffer(k)
   exe "wincmd p"
   setlocal nocursorline
   exe "cc" . (idx+1)
-  exe "normal zz"
+  exe "normal zzzv"
   setlocal cursorline
   exe "wincmd p"
 endfunction

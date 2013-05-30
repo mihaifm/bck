@@ -417,12 +417,7 @@ function! Bck(cmd, args)
     echomsg "running: " . cmd
     redraw
 
-    if exists("g:xolox#shell#version")
-      " use vim-shell when available
-      let s:output = xolox#shell#execute(cmd, 1)
-    else
-      let s:output = split(system(cmd), "\n")
-    end
+    let s:output = split(system(cmd), "\n")
 
     call filter(s:output, "v:val !~# '^ack.pl:'")
     call filter(s:output, "v:val !~# '^ERR:'")
